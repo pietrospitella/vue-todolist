@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vue To Do List</title>
+  </head>
+  <body>
+    <div class="container" id="root">
+      <header class="logo">
+        <img src="https://www.boolean.careers/images/misc/logo.png" alt="logo">
+      </header>
+      <nav class="new_todo">
+        <input type="text" v-model="newToDo" placeholder="Aggiungi un ToDo" name="" id="" @keyup.enter="addToDo">
+        <button @click="addToDo">Aggiungi</button>
+      </nav>
+      <main class="elenco">
+        <ul v-if="toDos.length > 0">
+          <li v-for="(todo, i) in toDos">
+            {{todo}}
+          <i @click="removeToDo(i)" class="fas fa-times"></i>  
+          </li>
+        </ul>
+        <h2 v-else>Bravo, hai completato la tua lista</h2>
+      </main>
+
+
+
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
